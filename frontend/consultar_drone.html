@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script src="./js/consultar_drone.js" defer></script>
+		<link rel="stylesheet" href="./style.css" />
+
+		<title>Drone</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="./index.html">Home</a>
+				<div>
+					<select onchange="location.href = this.value">
+						<option disabled selected>Usuário</option>
+						<option value="./cadastrar_usuario.html">Cadastrar Usuário</option>
+					</select>
+					<select onchange="location.href = this.value">
+						<option disabled selected>Drone</option>
+						<option value="./cadastrar_drone.html">Cadastrar Drone</option>
+						<option value="./consultar_drone.html">Consultar Drone</option>
+					</select>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<form id="formVeiculo">
+				<h1>Consultar Drone</h1>
+				<input type="text" placeholder="Número de Série" id="inputNumeroSerie" />
+				<button>Consultar</button>
+			</form>
+			<p id="res"></p>
+			<table>
+				<thead>
+					<th>ID</th>
+					<th>Modelo</th>
+					<th>Marca</th>
+					<th>Número de Série</th>
+					<th>Tipo do serviço</th>
+					<th>Cliente</th>
+				</thead>
+				<tbody id="resTabela"></tbody>
+			</table>
+		</main>
+	</body>
+</html>

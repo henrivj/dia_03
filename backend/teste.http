@@ -1,0 +1,66 @@
+### cadastrar cliente
+POST http://localhost:3000/cliente
+Content-Type: application/json
+
+{
+    "nome": "nome",
+    "email": "email@email.com",
+    "senha": "senha",
+    "cpf": "12345678910",
+    "endereco": "endereco",
+    "telefone": "telefone"
+}
+
+### logar
+# @name valToken
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "email@email.com",
+    "senha": "senha"
+}
+
+### ! ROTAS PRIVADAS
+
+### consultar cliente id
+GET http://localhost:3000/cliente/1
+Authorization: {{valToken.response.body.token}}
+
+### consultar cliente nome
+GET http://localhost:3000/cliente?nome=nome
+Authorization: {{valToken.response.body.token}}
+
+### listar clientes
+GET http://localhost:3000/clientes
+Authorization: {{valToken.response.body.token}}
+
+### atualizar cliente
+PATCH http://localhost:3000/cliente/1
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+{
+    "telefone": "novo telefone"
+}
+
+### deletar cliente
+DELETE http://localhost:3000/cliente/1
+Authorization: {{valToken.response.body.token}}
+
+### cadastrar drone
+POST http://localhost:3000/drone
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
+
+{
+    "modelo": "modelo",
+    "marca": "marca",
+    "numeroSerie": "1",
+    "tipoServico": "tipoServico"
+}
+
+### consultar drone
+GET http://localhost:3000/drone/1
+Content-Type: application/json
+Authorization: {{valToken.response.body.token}}
